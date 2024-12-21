@@ -1,0 +1,131 @@
+/* ~* Cyber Enchantments v2.0 *~ */
+:root {
+    --primary: #00ff9f;
+    --secondary: #00b8ff;
+    --danger: #ff0066;
+    --warning: #ffaa00;
+    --background: #000913;
+}
+
+/* Matrix rain animation */
+@keyframes matrix-rain {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Radar sweep effect */
+@keyframes radar-sweep {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Base styles for our digital shrine */
+body {
+    background-color: var(--background);
+    color: var(--primary);
+    font-family: 'VT323', 'Courier New', monospace;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Matrix background effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg,
+        transparent 0%,
+        rgba(0, 255, 159, 0.03) 50%,
+        transparent 100%);
+    animation: matrix-rain 20s linear infinite;
+    pointer-events: none;
+}
+
+/* Cyber-enhanced container */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Radar display styling */
+.radar {
+    aspect-ratio: 1;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    position: relative;
+    background: radial-gradient(
+        circle,
+        rgba(0, 255, 159, 0.1) 0%,
+        transparent 70%
+    );
+}
+
+.radar::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+    transform-origin: left;
+    animation: radar-sweep 4s linear infinite;
+}
+
+/* Device blips on radar */
+.blip {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.blip.friendly {
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary);
+}
+
+.blip.hostile {
+    background: var(--danger);
+    box-shadow: 0 0 8px var(--danger);
+}
+
+/* Device list styling */
+.device-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.device {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid var(--primary);
+    background: rgba(0, 255, 159, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Cyber buttons */
+.cyber-button {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cyber-button:hover {
+    background: rgba(0, 255, 159, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 159, 0.3);
+}
