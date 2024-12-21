@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡️ RetroRadar - Digital Scrying Glass ⚡️</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="matrix-background">
+    <div class="container cyber-enhanced">
+        <header class="scanner-header">
+            <pre class="ascii-art">
+
+
+ ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄  ▄            ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
+▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░▌          ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌          ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌
+▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌
+▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌
+▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+▐░█▀▀▀▀█░█▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀█░█▀▀ 
+▐░▌     ▐░▌  ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌       ▐░▌▐░▌     ▐░▌  
+▐░▌      ▐░▌ ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░▌       ▐░▌▐░▌      ▐░▌ 
+▐░▌       ▐░▌▐░▌       ▐░▌▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌       ▐░▌
+ ▀         ▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀   ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀         ▀ 
+
+
+            </pre>
+            <p class="subtext">.: Scanning the Digiplex Local Matrix Field :.</p>
+        </header>
+
+        <main class="scanner-interface">
+            <section class="control-panel panel">
+    <div class="button-grid">
+        <button id="scanButton" class="cyber-button primary">
+            [ INITIATE SCAN ]
+        </button>
+        <button id="toggleWhitelist" class="cyber-button friendly">
+            [ FRIENDLIES ]
+        </button>
+        <button id="toggleBlacklist" class="cyber-button hostile">
+            [ HOSTILES ]
+        </button>
+        <button id="clearData" class="cyber-button warning">
+            [ CLEAR DATA ]
+        </button>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-box">
+            <span class="stat-label">ACTIVE SCANS</span>
+            <span id="scanCount" class="stat-value">0</span>
+            <div class="stat-bar"></div>
+        </div>
+        <div class="stat-box">
+            <span class="stat-label">KNOWN DEVICES</span>
+            <span id="deviceCount" class="stat-value">0</span>
+            <div class="stat-bar"></div>
+        </div>
+        <div class="stat-box">
+            <span class="stat-label">SIGNAL STRENGTH</span>
+            <span id="signalStrength" class="stat-value">-</span>
+            <div class="stat-bar"></div>
+        </div>
+        <div class="stat-box">
+            <span class="stat-label">THREAT LEVEL</span>
+            <span id="threatLevel" class="stat-value">LOW</span>
+            <div class="stat-bar"></div>
+        </div>
+    </div>
+</section>
+
+<section class="main-display panel">
+    <div class="split-view">
+        <div class="radar-container">
+            <div id="radar" class="radar">
+                <div class="radar-center"></div>
+                <div class="radar-sweep"></div>
+                <!-- Device blips will manifest here -->
+            </div>
+            <div class="radar-rings">
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+            </div>
+        </div>
+
+        <div class="device-panel">
+            <h3 class="panel-header">.: DETECTED DEVICES :.</h3>
+            <div id="device-list" class="device-list custom-scroll">
+                <!-- Device cards will manifest here -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="device-details" class="device-details panel">
+    <div class="details-header">
+        <h3>DEVICE ANALYSIS</h3>
+        <button class="close-button cyber-button">[ X ]</button>
+    </div>
+    <div class="details-content">
+        <!-- Device inspection data will manifest here -->
+    </div>
+    <div class="details-actions">
+        <button class="cyber-button friendly">[ ADD TO WHITELIST ]</button>
+        <button class="cyber-button hostile">[ MARK AS HOSTILE ]</button>
+    </div>
+</div>
+
+<div id="status-log" class="status-log panel">
+    <pre class="log-content">
+> Initializing RetroRadar v2.0...
+> Calibrating digital scrying sensors...
+> Ready to detect cliff racers in the network...
+    </pre>
+</div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
