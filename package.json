@@ -1,0 +1,36 @@
+{
+  "name": "radolar",
+  "version": "2.0.0",
+  "description": "A superbased local device scanner wrapped in retro ASCII aesthetics with live updating radar.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "scan": "python3 server/scanner.py",
+    "deploy": "gh-pages -d public"
+  },
+  "keywords": [
+    "retro",
+    "radar",
+    "network-scanner",
+    "cyberpunk",
+    "ascii-art",
+    "device-detection",
+    "bluetooth",
+    "wifi"
+  ],
+  "author": "numbpill3d",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "ws": "^8.2.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3",
+    "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
